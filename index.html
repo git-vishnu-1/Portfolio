@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Anti-FOUC Theme Initialization -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      } else if (prefersDark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
+  <title>Vishnu Manoj — Full-Stack Developer</title>
+  <meta name="description" content="Vishnu Manoj — CS student and full-stack developer building web apps with Node.js, Express, PostgreSQL, and React." />
+  <meta name="author" content="Vishnu Manoj" />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vishnumanoj.vercel.app" />
+  <meta property="og:title" content="Vishnu Manoj — Full-Stack Developer" />
+  <meta property="og:description" content="CS student and full-stack developer building web apps with Node.js, Express, PostgreSQL, and React." />
+  <meta property="og:image" content="og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vishnu Manoj — Full-Stack Developer" />
+  <meta name="twitter:description" content="CS student and full-stack developer building web apps with Node.js, Express, PostgreSQL, and React." />
+  <meta name="twitter:image" content="og-image.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <header class="nav">
+      <a href="#" class="nav-brand">Vishnu Manoj</a>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+          <a href="resume.pdf" class="nav-resume-link" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+        </nav>
+
+        <button id="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="hero-name">Vishnu Manoj</h1>
+      <p class="hero-tagline">Full-stack developer &amp; CS undergrad</p>
+
+      <p class="hero-bio">
+        Hey, I'm Vishnu. I'm a final-year Computer Science student at College of Engineering, Adoor in Kerala, India.
+        I like building web applications, designing REST APIs, and working with relational databases.
+        Most of my projects involve Node.js, Express, PostgreSQL, and React.
+      </p>
+
+      <div class="hero-links">
+        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+        <a href="https://github.com/git-vishnu-1" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/vishnu-manoj-52375b2a1" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="mailto:vishnumanoj6605@gmail.com">Email ↗</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title">About</h2>
+      <p class="hero-bio" style="margin-bottom: 0;">
+        I enjoy building practical web tools that solve everyday problems. On the backend, I care about clean API design, proper data validation with tools like Zod, and clear database schemas. On the frontend, I focus on building fast, accessible interfaces with React and Tailwind CSS.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-list">
+        <!-- Passio -->
+        <article class="project-item">
+          <div class="project-top">
+            <h3 class="project-title">Passio — Community Platform</h3>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/git-vishnu-1/passio" target="_blank" rel="noopener noreferrer">Source ↗</a>
+            </div>
+          </div>
+          <span class="project-tech">React · Node.js · Express · PostgreSQL · Prisma · Tailwind CSS</span>
+          <p class="project-desc">
+            A full-stack community platform built on the PERN stack. Features cursor-based post pagination, tag filtering, nested comments, and atomic like toggles. User authentication is handled with JWTs in HTTP-only cookies and validated with Zod schemas across REST endpoints.
+          </p>
+        </article>
+
+        <!-- Internship Application Tracker -->
+        <article class="project-item">
+          <div class="project-top">
+            <h3 class="project-title">Internship Application Tracker</h3>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/git-vishnu-1/mini-project" target="_blank" rel="noopener noreferrer">Source ↗</a>
+            </div>
+          </div>
+          <span class="project-tech">Node.js · Express · MySQL · JWT · bcrypt</span>
+          <p class="project-desc">
+            A web application created to help college students track both on-campus placement drives and off-campus applications in one dashboard. Features search, filtering, and real-time status updates to replace manual spreadsheet tracking.
+          </p>
+        </article>
+
+        <!-- Bookmark Manager API -->
+        <article class="project-item">
+          <div class="project-top">
+            <h3 class="project-title">Bookmark Manager API</h3>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/git-vishnu-1/bookmark-manager" target="_blank" rel="noopener noreferrer">Source ↗</a>
+            </div>
+          </div>
+          <span class="project-tech">Node.js · Express · MySQL</span>
+          <p class="project-desc">
+            A RESTful backend for saving and organizing bookmarks with many-to-many tags. Designed a normalized schema with MySQL FULLTEXT search, parameterized queries, and database health-check routes.
+          </p>
+        </article>
+
+        <!-- CGPU CEA Website -->
+        <article class="project-item">
+          <div class="project-top">
+            <h3 class="project-title">CGPU CEA Website</h3>
+            <div class="project-links">
+              <a class="project-link" href="https://cgpucea.vercel.app" target="_blank" rel="noopener noreferrer">Live ↗</a>
+              <a class="project-link" href="https://github.com/git-vishnu-1/cgpu.git" target="_blank" rel="noopener noreferrer">Source ↗</a>
+            </div>
+          </div>
+          <span class="project-tech">HTML · CSS · JavaScript</span>
+          <p class="project-desc">
+            The official website for the Career Guidance &amp; Placement Unit at College of Engineering, Adoor. Displays past recruiter information, year-wise placement statistics, and direct contact details for visiting companies.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skills-row">
+          <span class="skills-label">Languages</span>
+          <div class="skills-tags">
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skills-row">
+          <span class="skills-label">Backend</span>
+          <div class="skills-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">JWT</span>
+            <span class="tag">Prisma ORM</span>
+            <span class="tag">Zod</span>
+            <span class="tag">bcrypt</span>
+            <span class="tag">Multer</span>
+            <span class="tag">Nodemailer</span>
+          </div>
+        </div>
+
+        <div class="skills-row">
+          <span class="skills-label">Frontend</span>
+          <div class="skills-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+          </div>
+        </div>
+
+        <div class="skills-row">
+          <span class="skills-label">Databases</span>
+          <div class="skills-tags">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skills-row">
+          <span class="skills-label">Tools &amp; Core</span>
+          <div class="skills-tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Linux</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Data Structures &amp; Algorithms</span>
+            <span class="tag">DBMS</span>
+            <span class="tag">OOP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & LEADERSHIP -->
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience &amp; Leadership</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Data Science &amp; ML Intern <span class="timeline-org">· Techmaghi (Kerala Startup Mission)</span></span>
+            <span class="timeline-date">June 2026</span>
+          </div>
+          <p class="timeline-desc">
+            Cleaned and analyzed real-world datasets with Python, NumPy, and Pandas, building visualizations to uncover data patterns.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Webmaster <span class="timeline-org">· IEEE SB CEA</span></span>
+            <span class="timeline-date">March 2026 – Present</span>
+          </div>
+          <p class="timeline-desc">
+            Design and maintain the IEEE Student Branch website, keeping event information and organizational updates current.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Executive Committee Member <span class="timeline-org">· CGPU CEA</span></span>
+            <span class="timeline-date">February 2026 – Present</span>
+          </div>
+          <p class="timeline-desc">
+            Help coordinate campus placement workshops, student preparation drives, and recruiter communication.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Python Trainee <span class="timeline-org">· Internz Learn</span></span>
+            <span class="timeline-date">October 2025</span>
+          </div>
+          <p class="timeline-desc">
+            Worked on Python programming fundamentals, object-oriented concepts, and basic data analysis.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Flutter Intern <span class="timeline-org">· SRAI Smart Solutions</span></span>
+            <span class="timeline-date">June 2025</span>
+          </div>
+          <p class="timeline-desc">
+            Built responsive mobile screens using Flutter and Dart, following standard Git development workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-header">
+            <span class="edu-institution">College of Engineering, Adoor</span>
+            <span class="edu-date">2023 – 2027</span>
+          </div>
+          <p class="edu-detail">B.Tech in Computer Science and Engineering · CGPA: 6.71</p>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-header">
+            <span class="edu-institution">Higher Secondary &amp; Secondary Education</span>
+            <span class="edu-date">Kerala State Board</span>
+          </div>
+          <p class="edu-detail">Class XII: 81% (2023) · Class X: 95% (2021)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-desc">
+        I'm currently looking for full-stack and backend engineering opportunities. If you'd like to chat about a role, a project, or just say hi, feel free to reach out.
+      </p>
+
+      <div class="contact-channels">
+        <a href="mailto:vishnumanoj6605@gmail.com" class="contact-btn contact-btn-primary">
+          Email Me
+        </a>
+        <button id="copy-email-btn" type="button" class="contact-btn">
+          Copy Email
+        </button>
+        <a href="https://github.com/git-vishnu-1" target="_blank" rel="noopener noreferrer" class="contact-btn">
+          GitHub ↗
+        </a>
+        <a href="https://www.linkedin.com/in/vishnu-manoj-52375b2a1" target="_blank" rel="noopener noreferrer" class="contact-btn">
+          LinkedIn ↗
+        </a>
+        <a href="https://wa.me/919544889459" target="_blank" rel="noopener noreferrer" class="contact-btn">
+          WhatsApp ↗
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© 2026 Vishnu Manoj</span>
+    <a href="https://github.com/git-vishnu-1/Portfollio" target="_blank" rel="noopener noreferrer" class="footer-source">Source code ↗</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
