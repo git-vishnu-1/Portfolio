@@ -21,6 +21,40 @@ if (toggle) {
   });
 }
 
+// Mobile Navigation
+const nav = document.querySelector(".nav");
+const menuToggle = document.getElementById("nav-menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+const setMenuOpen = (open) => {
+  if (!nav || !menuToggle) return;
+  nav.classList.toggle("menu-open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+};
+
+if (nav && menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    setMenuOpen(!nav.classList.contains("menu-open"));
+  });
+
+  navLinks.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setMenuOpen(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuOpen(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!nav.contains(event.target)) setMenuOpen(false);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 640) setMenuOpen(false);
+  });
+}
+
 // 1-Click Copy Email
 const copyBtn = document.getElementById("copy-email-btn");
 const toast = document.getElementById("toast");
