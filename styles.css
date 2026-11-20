@@ -208,6 +208,19 @@ main {
 /* HERO */
 .hero {
   padding: 4.5rem 0 3.5rem;
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  align-items: start;
+  gap: 1.75rem;
+}
+
+.hero-photo {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 20px -12px rgba(15, 23, 42, 0.45);
 }
 
 .hero-name {
@@ -568,6 +581,13 @@ main {
 @media (max-width: 640px) {
   .hero {
     padding: 3rem 0 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .hero-photo {
+    width: 96px;
+    height: 96px;
   }
 
   .hero-name {
